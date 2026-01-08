@@ -24,6 +24,10 @@ export class TaskService {
     throw new NotFoundException(`Task with ${id} not found`);
   }
 
+  findAll(): TaskDto[] {
+    return this.tasks;
+  }
+
   update(id: string, task: TaskDto) {
     const foundTask = this.tasks
       .filter((task) => task.id === id)
