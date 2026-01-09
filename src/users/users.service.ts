@@ -15,4 +15,8 @@ export class UsersService {
   findAll() {
     return this.users;
   }
+
+  findByUsername(username: string): UsersDto | undefined {
+    return this.users.find((user) => user.username === username);
+  }
 }
