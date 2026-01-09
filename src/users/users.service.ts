@@ -9,6 +9,10 @@ export class UsersService {
     newUser.id = randomUUID();
     newUser.password = bcryptHashSync(newUser.password, 10);
     this.users.push(newUser);
-    console.log(this.users);
+    return newUser;
+  }
+
+  findAll() {
+    return this.users;
   }
 }
